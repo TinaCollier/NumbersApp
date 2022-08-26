@@ -7,6 +7,7 @@ import WelcomePage from './pages/welcome/WelcomePage';
 import TriviaPage from './pages/trivia/TriviaPage';
 import FactsPage from './pages/facts/FactsPage';
 import PracticePage from "./pages/practice/PracticePage.js";
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
           <Route path="/trivia" element={ <TriviaPage /> }/>
           <Route path="/facts" element={ <FactsPage /> }/>
           <Route path="/practice" element={ <PracticePage /> }/>
+
         </Routes>
       </BrowserRouter>
 

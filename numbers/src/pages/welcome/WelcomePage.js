@@ -68,9 +68,9 @@ const WelcomePage = () => {
                     <CardText>
                         Choose me to learn some math facts!
                     </CardText>
-                    <Link to="/trivia">
+                    <Link to="/facts">
                         <Button>
-                            Button
+                            Let's Go!
                         </Button>
                     </Link>
                     </CardBody>
@@ -96,9 +96,9 @@ const WelcomePage = () => {
                     <CardText>
                         Choose me to be quizzed on math trivia!
                     </CardText>
-                    <Link to="/facts">
+                    <Link to="/trivia">
                         <Button>
-                            Button
+                        Let's Go!
                         </Button>
                     </Link>
                     </CardBody>
@@ -126,7 +126,7 @@ const WelcomePage = () => {
                     </CardText>
                     <Link to="/practice">
                         <Button>
-                            Button
+                        Let's Go!
                         </Button>
                     </Link>
                     </CardBody>

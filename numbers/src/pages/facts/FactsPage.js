@@ -19,13 +19,13 @@ function FactsPage() {
             alt="Card image cap"
             src={numbers}
             style={{
-                height: 270
+                height: 350
             }}
             width="100%"
             />
             <CardImgOverlay>
             <CardTitle tag="h5">
-                Card Title
+                Math Facts
             </CardTitle>
             <CardText id="factsText">
                 <Facts />

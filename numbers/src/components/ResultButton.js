@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Trivia from '../../components/trivia';
-import Facts from '../../components/Facts';
+import Trivia from './trivia';
+import Facts from './Facts';
 
 function ResultButton(args) {
     const [modal, setModal] = useState(false);
@@ -20,7 +20,7 @@ function ResultButton(args) {
       <Button color="danger" onClick={toggle}>
           Result
       </Button>
-      <Modal isOpen={modal} toggle={toggle} {...args}>
+      <Modal isOpen={modal} toggle={toggle} {...args} id="Modal">
         <ModalHeader toggle={toggle}>{ result }</ModalHeader>
         <ModalBody>
             Your answer: { args.answer }
@@ -28,9 +28,7 @@ function ResultButton(args) {
             Correct answer: { args.number }
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>
-              Do Something
-          </Button>{' '}
+
           <Button color="secondary" onClick={toggle}>
               Cancel
           </Button>

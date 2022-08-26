@@ -8,12 +8,12 @@
 }
 
 .navbar {
-  background-color: #222121;
+  background-color: rgb(55, 50, 62);
   box-shadow: 0 0 25px 0 black;
 }
 
 a.navbar-brand {
-  color: rgb(235, 195, 64) !important;
+  color: rgb(222, 184, 65) !important;
 }
 
 .navbar ul {
@@ -62,31 +62,61 @@ a.navbar-brand {
 
 }
 
+p {
+  color: rgb(55, 50, 62)
+}
+
 button:hover {
   animation: spring 300ms ease-out;
   font-weight: bold;
   text-shadow: 0 -1px 0 #252322;
 }
 
+.card {
+  background-color: rgb(191, 189, 193);
+  border-width: 10px;
+  border-style: outset;
+  border-color: rgb(109, 106, 117);
+}
+
+#Modal {
+  background-color: rgb(191, 189, 193);
+  border-width: 10px;
+  border-style: outset;
+  border-color: rgb(109, 106, 117);
+  color: 55, 50, 62
+}
+
+.modal-body, .modal-header, .modal-footer {
+  background-color: rgb(191, 189, 193);
+}
+
 #calculatorCard {
   width: 320px;
   max-width: 320px;
   margin: 0 auto;
+
 }
 
+#practiceCard {
+  max-width: 600px;
+  margin: 0 auto;
 
+}
 
 #triviaCard {
   max-width: 600px;
+  margin: 0 auto;
 }
 
 #factsCard {
   max-width: 600px;
-  
+  min-height: 350px;
+  margin: 0 auto;
 }
 
 #factsText {
-  background-color: rgba(64, 64, 64, .7);
+  background-color: rgba(222, 158, 54, .7);
   border-radius: 15px;
 }
 

@@ -1,42 +1,21 @@
-import axios from "axios";
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import {
     InputGroup,
     Input,
     Button
 } from 'reactstrap';
-import ResultButton from "../pages/trivia/ResultButton";
-
-
+import ResultButton from "./ResultButton";
+import { practiceAPI } from "../utils/practiceAPI";
 
 const Practice = () => {
-    const [ practice, setPractice ] = useState('');
-    const random = Math.floor(Math.random() * 100);
-    const [ number, setNumber ] = useState(null);
     const [ answer, setAnswer ] = useState(null);
     const [ input, setInput ] = useState(0);
     const [ correct, setCorrect ] = useState(false);
-
-    const options = {
-    method: 'GET',
-    url: `https://x-math.herokuapp.com/api/random?max=999&negative=1`,
-    params: {fragment: 'true', notfound: 'floor', json: 'true'},
-    headers: {
-        'X-RapidAPI-Key': '8c92c093eemsh5e0dea634c28d38p1e8e03jsn7227b3c75cbe',
-        'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
-    }
-    };
-
-    useEffect(()=> {axios.request(options).then(function (response) {
-        console.log(response.data);
-        const question = response.data.expression;
-        setPractice(question);
-        setNumber(response.data.answer);
-    }).catch(function (error) {
-        console.error(error);
-    });
-    }, []);
-
+    const [ number, setNumber ] = useState(null);
+    const [ practice, setPractice ] = useState(null);
+    console.log('ping', number, practice)
+    
     const handleChange = (e) => {
         const newInput = e.target.value;
         setInput(newInput);
@@ -51,6 +30,14 @@ const Practice = () => {
         }
     }
 
+    const handleGenerate = async (e) => {
+        e.preventDefault();
+        const question = await practiceAPI();
+        console.log('q', question)
+        setPractice(question.expression);
+        setNumber(question.answer);
+    }
+
     const handleReset = () => {
         setCorrect(false);
         setAnswer(null);
@@ -60,7 +47,7 @@ const Practice = () => {
 
     return (
         <>
-        <>What is: {practice}?</>
+        { number === null ? <>Click Generate for a math problem.</> : <>What is: {practice}?</>}
         <InputGroup>
                 <Input type="number" value={ input } onChange={ handleChange} />
                 <Button onClick={ handleClick }>
@@ -68,6 +55,7 @@ const Practice = () => {
                 </Button>
             </InputGroup>
             { answer === null ? <></> : <ResultButton correct={ correct } answer={ answer } number={ number }/>}
+            <Button onClick={ handleGenerate }>Generate</Button>
             <Button
                 color="primary"
                 tag="input"
