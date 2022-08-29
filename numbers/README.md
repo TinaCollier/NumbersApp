@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# Numbers APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What It Is
+This is a Codecademy project in which I used React, Bootstrap, and a couple of APIs to create an app that provides the user with math facts, trivia, and practice. The purpose of the project was to utilize APIs and provide the user with 'messages'. 
 
-## Available Scripts
+## How It Works
 
-In the project directory, you can run:
+When the app is opened, the user is provided a welcome message and three options: Math Facts, Math Trivia, and Math Practice. The user can select one of the paths, which redirects them using Routing to a new page. 
 
-### `npm start`
+For Math Facts, the user can choose to input a number or select `Random`. They will be provided a 'fact' about that number using the Numbers API. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+For Math Trivia, the user selects `Generate` and is given a trivia question about a random, unknown number. The user can input a guess as to what the number is, select `Submit`, and then select `Result` to check their answer. If needed, they are provided a calculator which is hidden unless the user selects `Show Calculator`. Depending on the result, the user will receive a message letting them know whether they were correct or incorrect in their guess. This also uses the Numbers API. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Lastly, the Math Practice page utilizes the xMath API to generate addition, subtraction, multiplication, or division questions. The calculator component is provided on this page as well. The user can input a number, click `Submit`, then check if their answer is correct using the `Result` button. They will be given a message stating if they got the answer correct or incorrect. Unfortunately, this API was not functioning the last time I checked, so I may need to remove this page if it isn't fixed. 
 
-### `npm test`
+## What I Found Difficult
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The most difficult part of this build was refactoring the code. I didn't want the API calls to be made directly from the components, so I had to create a util folder and create individual files for each API. Once this was done, the code worked great. 
 
-### `npm run build`
+## What I Would Improve
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I would really love to add more pages and activities to this app. I could include a page that has math videos directly pulled from the YouTube API. I could add links to other Math learning resources or embed games into the app itself. 
